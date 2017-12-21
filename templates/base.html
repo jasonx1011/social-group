@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>News Social</title>
+    <title>Star Social Group</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -24,12 +24,12 @@
             <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                    <li><a href="#">Post</a></li>
-                    <li><a href="#">Groups</a></li>
-                    <li><a href="#">Create Group</a></li>
+                    <li><a href="{% url 'posts:create' %}">Post</a></li>
+                    <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                    <li><a href="{% url 'groups:create' %}">Create Group</a></li>
                     <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
                 {% else %}
-                    <li><a href="#">Groups</a></li>
+                    <li><a href="{% url 'groups:all' %}">Groups</a></li>
                     <li><a href="{% url 'accounts:login' %}">Log In</a></li>
                     <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
                 {% endif %}
