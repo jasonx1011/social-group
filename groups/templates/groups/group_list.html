@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block group_content %}
-<div class="col-md-8">
+<div class="col-md-7">
     <div class="list-group">
         {% for group in object_list %}
         <a class="list-group-item" href="{% url 'groups:single' slug=group.slug%}">
