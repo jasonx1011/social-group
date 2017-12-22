@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load bootstrap3 %}
 
+
 {% block content %}
-    <div class="container">
+    <!-- <div class="container center_div">-->
+    <div class="container col-lg-3">
         <h1>Sign Up</h1>
         <form method="POST">
             {% csrf_token %}
