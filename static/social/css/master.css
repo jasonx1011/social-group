@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    // background-color: black;
+    background-color: rgba(5, 9, 33, 0.86);
+    color:white;
+}
+
+.center_div{
+    margin: 0 auto;
+    width:80%
+}

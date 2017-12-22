@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="{% static 'social/css/master.css'%}">
 </head>
-<body>
+<body id="home-body">
     <nav class='navbar mynav' role="navigation" id="navbar">
         <div class="container">
             <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
@@ -44,4 +44,5 @@
 
     </div>
 </body>
+<script type="text/javascript" src="{% static 'social/js/master.js' %}"></script>
 </html>
