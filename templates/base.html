@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Star Social Group</title>
+    <title>Star Forum</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -21,12 +21,17 @@
 <body id="home-body">
     <nav class='navbar mynav' role="navigation" id="navbar">
         <div class="container">
-            <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+            <a class="navbar-brand mynav" href="{% url 'home' %}">Home</a>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'posts:create' %}">Post</a></li>
+                    <li>
+                        <a href="{% url 'posts:for_user' username=user.username%}">
+                            @{{ user.username }}
+                        </a>
+                    </li>
                     <li><a href="{% url 'groups:all' %}">Groups</a></li>
                     <li><a href="{% url 'groups:create' %}">Create Group</a></li>
+                    <li><a href="{% url 'posts:create' %}">Create Post</a></li>
                     <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
                 {% else %}
                     <li><a href="{% url 'groups:all' %}">Groups</a></li>

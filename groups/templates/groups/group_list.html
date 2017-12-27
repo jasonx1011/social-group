@@ -2,28 +2,19 @@
 {% block pregroup %}
 <div class="col-md-4">
     <div class="content">
-
-        {% if user.is_authenticated %}
-        <h2>Welcome Back!</h2>
-            <a href="{% url 'posts:for_user' username=user.username%}">
-            @{{ user.username }}
-            </a>
-        {% endif %}
-        <h2>Groups</h2>
-        <p>Welcome to the group page!</p>
-
+        <h3>Welcome to the group page!</h3>
     </div>
-{% if user.is_authenticated %}
+    {% if user.is_authenticated %}
     <a href="{% url 'groups:create' %}" class='btn btn-md btn-fill btn-warning'>
     <span class="glyphicon glyphicon-plus-sign">Create New Group!</span>
     </a>
-{% endif %}
+    {% endif %}
 </div>
 {% endblock %}
 
 {% block group_content %}
 <div class="col-md-7">
-    <div class="list-group">
+    <div class="list-group add-scroll-y">
         {% for group in object_list %}
         <a class="list-group-item" href="{% url 'groups:single' slug=group.slug%}">
             <h3 class="title list-group-item-heading">{{ group.name }}</h3>
