@@ -52,6 +52,8 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
 
 
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
+    # form_class = forms.PostForm
+    # fields = ('image', 'message', 'group')
     fields = ('message', 'group')
     model = models.Post
 
