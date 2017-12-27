@@ -31,3 +31,8 @@ input.transparent-input{
     padding-top: 0%;
     padding-bottom: 20px;
 }
+
+.add-scroll-y {
+  height: 650px;
+  overflow-y: scroll;
+}
