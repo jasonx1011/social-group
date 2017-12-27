@@ -1,6 +1,6 @@
 .mycontent{
   padding-top: 100px;
- border: 10px solid red;
+  border: 10px solid red;
 }
 
 html,
@@ -9,6 +9,7 @@ body {
   width: 100%;
   overflow: hidden;
   background: #191063;
+  // background-color: transparent;
   margin: 0;
 }
 

@@ -2,11 +2,32 @@ body {
     margin: 0;
     overflow: hidden;
     // background-color: black;
-    background-color: rgba(5, 9, 33, 0.86);
+    // background-color: rgba(5, 9, 33, 0.86);
+    background: url("../assets/earth_2.jpeg");
+    // background-size: auto;
+    // background-size: 100% auto;
+    background-size: cover;
     color:white;
 }
 
 .center_div{
     margin: 0 auto;
     width:80%
+}
+
+input.transparent-input{
+   background-color:transparent !important;
+   border:none !important;
+}
+
+.transparent-form{
+    // background-color: rgba(0,0,0,0.4);
+    // background-color: black !important;
+    // background-color: rgba(5,4,2,0.1);
+    // background-color: rgba(255,255,255,0.4);
+    background-color: rgba(2,2,2,0.5);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0%;
+    padding-bottom: 20px;
 }
