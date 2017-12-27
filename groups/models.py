@@ -16,7 +16,7 @@ class Group(models.Model):
     slug = models.SlugField(allow_unicode=True, unique=True)
     description = models.TextField(blank=True, default='')
     description_html = models.TextField(editable=False, blank=True, default='')
-    members = models.ManyToManyField(User, through='GroupMember')
+    members = models.ManyToManyField(User, related_name='group_members', through='GroupMember')
 
     def __str__(self):
         return self.name
