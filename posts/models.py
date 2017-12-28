@@ -12,12 +12,13 @@ User = get_user_model()
 
 
 class Post(models.Model):
+    image_url = models.URLField(default="http://via.placeholder.com/140x100")
     user = models.ForeignKey(User, related_name='posts')
     created_at = models.DateTimeField(auto_now=True)
     # image = models.ImageField(upload_to='documents/')
     # image_url = models.URLField()
     # image_url = models.TextField()
-    message = models.TextField()
+    message = models.TextField(default="")
     message_html = models.TextField(editable=False)
     group = models.ForeignKey(Group, related_name='posts', null=True, blank=True)
 

@@ -1,16 +1,20 @@
-<div class="post media transparent-form col-md-3">
-	<h3>{{ post.message_html|safe }}</h3>
-	<div class="media-body">
+<div class="media thumbnail col-sm-6 col-md-3 transparent-padding">
+	<div class="media-heading">
+        <img class="thumbnail" style="width: 100%;display: block; margin: 0 auto;" src={{ post.image_url }}>
 		<!--
 		<strong>{# { post.user.username } #}</strong>
 		-->
-		<h5 class="media-heading">
-			<span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
-            {% if post.group %}
-                <span class="group-name">in <a href="{% url 'groups:single' slug=post.group.slug%}">{{ post.group.name }}</a></span>
-            {% endif %}
-			<span class="time-name"> at
-            <time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
+        <p></p>
+        <h4 class="media-body center-div"> {{ post.message_html|safe|truncatechars_html:50 }} </h4>
+        <span class="username"><a
+                href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
+        {% if post.group %}
+            <span class="group-name"> posted in group <a
+                    href="{% url 'groups:single' slug=post.group.slug %}">{{ post.group.name }}</a></span>
+        {% endif %}
+        <span class="time-name"> at
+            <time class="time"><a
+                    href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
             </span>
 		</h5>
 
@@ -24,3 +28,4 @@
 		</div>
 	</div>
 </div>
+
