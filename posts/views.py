@@ -1,6 +1,6 @@
 from django.contrib import messages
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 
@@ -62,6 +62,16 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
         self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
+
+
+class UpdatePost(LoginRequiredMixin, SelectRelatedMixin, generic.UpdateView):
+    fields = ('image_url', 'message', 'group')
+    model = models.Post
+    template_name_suffix = '_update_form'
+
+    def get_object(self, *args, **kwargs):
+        post = get_object_or_404(self.model, pk=self.kwargs['pk'])
+        return post
 
 
 class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):

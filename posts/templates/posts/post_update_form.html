@@ -3,12 +3,12 @@
 
 {% block post_content %}
 <div class="col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-4">
-    <h4>Create a new Post!</h4>
-    <form id="postForm" action="{% url 'posts:create' %}" method="post">
+    <h4>Update Post</h4>
+    <form id="postForm" action="{% url 'posts:update' pk=post.pk %}" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" value="Create" class="btn btn-primary btn-default">
-        <a href="{% url 'posts:all' %}"
+        <input type="submit" value="Update" class="btn btn-primary btn-default">
+        <a href="{% url 'posts:single' username=user.username pk=object.pk %}"
            class="btn btn-simple btn-default">Cancel</a>
     </form>
 </div>
