@@ -15,6 +15,16 @@ class CreateGroup(LoginRequiredMixin, generic.CreateView):
     model = Group
 
 
+class UpdateGroup(LoginRequiredMixin, generic.UpdateView):
+    fields = ('image_url', 'name', 'description')
+    model = Group
+    template_name_suffix = '_update_form'
+
+    def get_object(self, *args, **kwargs):
+        group = get_object_or_404(self.model, pk=self.kwargs['pk'])
+        return group
+
+
 class SingleGroup(generic.DetailView):
     model = Group
 

@@ -3,12 +3,12 @@
 
 {% block group_content %}
 <div class="col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-4">
-    <h4>Create a new group!</h4>
-    <form id="groupForm" action="{% url 'groups:create' %}" method="post">
+    <h4>Update Group</h4>
+    <form id="postForm" action="{% url 'groups:update' pk=group.pk %}" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" value="Create" class="btn btn-primary btn-default">
-        <a href="{% url 'groups:all' %}"
+        <input type="submit" value="Update" class="btn btn-primary btn-default">
+        <a href="{% url 'groups:single' slug=group.slug %}"
            class="btn btn-simple btn-default">Cancel</a>
     </form>
 </div>

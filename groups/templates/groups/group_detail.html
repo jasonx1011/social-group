@@ -11,7 +11,7 @@
                 <img src={{ group.image_url }}>
                 <div class="caption">
                     <h3>{{ group.name }}</h3>
-                    <p>{{ group.description_html|safe|truncatewords_html:50 }}</p>
+                    <p>{{ group.description_html|safe|truncatechars_html:85}}</p>
                         {% if user in group.members.all %}
                             <a href="{% url 'groups:leave' slug=group.slug %}"
                                class="btn btn-primary btn-fill btn-warning" role="button">
