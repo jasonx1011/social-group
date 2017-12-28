@@ -8,7 +8,7 @@
     {% if request.user.is_authenticated %}
     <div class="card card-with-shadow">
         <div class="content">
-            <h5 class="title">Your Groups</h5>
+            <h5 class="title">Groups</h5>
             <ul class="list-unstyled">
                 {% for group in post_user.group_members.all %}
                     <li class="group li-with-bullet">
@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block post_content %}
-    <h3>Your Posts:</h3>
+    <h3>Posts</h3>
     {% for post in post_list %}
         {% include "posts/_post.html" %}
     {% endfor %}
