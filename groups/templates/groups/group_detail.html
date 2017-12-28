@@ -3,21 +3,30 @@
 {% block pregroup %}
 
 <div class="content container">
-    <h2>{{ group.name }}</h2>
     <h3>Member Count: {{ group.members.count }} </h3>
 
-    {% if user in group.members.all %}
-        <a href="{% url 'groups:leave' slug=group.slug %}"
-           class="btn btn-primary btn-fill btn-warning">
-            <span class="glyphicon glyphicon-remove-circle">Leave</span>
-        </a>
-    {% else %}
-        <a href="{% url 'groups:join' slug=group.slug %}"
-           class="btn btn-primary btn-fill btn-warning">
-            <span class="glyphicon glyphicon-ok-circle">Join</span>
-        </a>
-    {% endif %}
-
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src={{ group.image_url }}>
+                <div class="caption">
+                    <h3>{{ group.name }}</h3>
+                    <p>{{ group.description_html|safe|truncatewords_html:50 }}</p>
+                        {% if user in group.members.all %}
+                            <a href="{% url 'groups:leave' slug=group.slug %}"
+                               class="btn btn-primary btn-fill btn-warning" role="button">
+                                <span class="glyphicon glyphicon-remove-circle"> Leave</span>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'groups:join' slug=group.slug %}"
+                               class="btn btn-primary btn-fill btn-warning">
+                                <span class="glyphicon glyphicon-ok-circle"> Join</span>
+                            </a>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 

@@ -2,12 +2,9 @@
 {% load staticfiles %}
 <html lang="en">
 <head>
-    <!-- bootstrap 4.0
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    -->
+    <meta charset="UTF-8">
+    <title>Star Forum</title>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -18,22 +15,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'social/css/master.css'%}">
-
-    <meta charset="UTF-8">
-    <title>Star Forum</title>
-
 </head>
 <body id="home-body">
     <nav class='navbar mynav' role="navigation" id="navbar">
         <div class="container">
             <a class="navbar-brand mynav" href="{% url 'home' %}">Home</a>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                     <li>
@@ -41,14 +29,12 @@
                             @{{ user.username }}
                         </a>
                     </li>
-                    <li><a href="{% url 'posts:all' %}">All posts</a></li>
-                    <li><a href="{% url 'groups:all' %}">All Groups</a></li>
-                    <li><a href="{% url 'posts:create' %}">Create Post</a></li>
+                    <li><a href="{% url 'groups:all' %}">Groups</a></li>
                     <li><a href="{% url 'groups:create' %}">Create Group</a></li>
+                    <li><a href="{% url 'posts:create' %}">Create Post</a></li>
                     <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
                 {% else %}
-                    <li><a href="{% url 'posts:all' %}">All Posts</a></li>
-                    <li><a href="{% url 'groups:all' %}">All Groups</a></li>
+                    <li><a href="{% url 'groups:all' %}">Groups</a></li>
                     <li><a href="{% url 'accounts:login' %}">Log In</a></li>
                     <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
                 {% endif %}

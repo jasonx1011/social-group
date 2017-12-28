@@ -12,6 +12,7 @@ register = template.Library()
 
 
 class Group(models.Model):
+    image_url = models.URLField(default="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg")
     name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(allow_unicode=True, unique=True)
     description = models.TextField(blank=True, default='')

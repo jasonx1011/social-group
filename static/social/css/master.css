@@ -29,10 +29,23 @@ input.transparent-input{
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 0%;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
+    border: 1px solid floralwhite;
+    // border: 2px solid red;
+    border-radius: 5px;
+    margin: 0px;
 }
 
 .add-scroll-y {
-  height: 650px;
-  overflow-y: scroll;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.overflow-y {
+    overflow-y: scroll;
+}
+
+.center_div{
+    margin: 0 auto;
+    width: 30%
 }

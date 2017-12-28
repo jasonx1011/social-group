@@ -11,7 +11,7 @@ from . import models
 
 # Create your views here.
 class CreateGroup(LoginRequiredMixin, generic.CreateView):
-    fields = ('name', 'description')
+    fields = ('image_url', 'name', 'description')
     model = Group
 
 
