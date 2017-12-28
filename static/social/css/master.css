@@ -10,17 +10,12 @@ body {
     color:white;
 }
 
-.center_div{
-    margin: 0 auto;
-    width:80%
-}
-
 input.transparent-input{
    background-color:transparent !important;
    border:none !important;
 }
 
-.transparent-form{
+.transparent-form {
     // background-color: rgba(0,0,0,0.4);
     // background-color: black !important;
     // background-color: rgba(5,4,2,0.1);
@@ -28,10 +23,43 @@ input.transparent-input{
     background-color: rgba(2,2,2,0.5);
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 0%;
+    padding-top: 5px;
     padding-bottom: 25px;
     border: 1px solid floralwhite;
     // border: 2px solid red;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+.transparent-form-top-more {
+    background-color: rgba(2,2,2,0.5);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid floralwhite;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+.transparent-padding {
+    background-color: rgba(2,2,2,0.5);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0px solid floralwhite;
+    border-radius: 5px;
+    margin: 10px;
+    margin: 0px;
+}
+
+.transparent-no-border {
+    background-color: rgba(2,2,2,0.5);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 20px;
     border-radius: 5px;
     margin: 0px;
 }
@@ -45,7 +73,8 @@ input.transparent-input{
     overflow-y: scroll;
 }
 
-.center_div{
+.center-div{
     margin: 0 auto;
     width: 30%
 }
+
