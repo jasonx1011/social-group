@@ -1,9 +1,12 @@
 {% extends "groups/group_base.html" %}
 {% block pregroup %}
     {% if user.is_authenticated %}
-    <a href="{% url 'groups:create' %}" class='btn btn-md btn-fill btn-warning'>
-    <span class="glyphicon glyphicon-plus-sign"> Create New Group! </span>
-    </a>
+        <div style="padding-top: 10px; padding-bottom: 10px">
+            <a href="{% url 'groups:create' %}" class='btn btn-md btn-fill btn-warning'>
+                <span class="glyphicon glyphicon-plus-sign"> Create New Group! </span>
+            </a>
+
+        </div>
     {% endif %}
     <div class="content">
         <h3>Welcome to the group page!</h3><br>
@@ -11,12 +14,8 @@
 {% endblock %}
 
 {% block group_content %}
-<!--
-<div class="col-md-7">
--->
 <div class="">
-    <!-- <div class="list-group add-scroll-y"> -->
-    <div class="list-group row add-scroll-y">
+    <div class="list-group row">
         {% for group in object_list %}
             <div class="col-sm-6 col-md-3">
                 <div class="thumbnail">

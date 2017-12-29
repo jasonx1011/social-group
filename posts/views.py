@@ -19,6 +19,8 @@ User = get_user_model()
 # Create your views here.
 class PostList(SelectRelatedMixin, generic.ListView):
     model = models.Post
+    # paginate_by = 5
+    context_object_name = 'posts'
     select_related = ('user', 'group')
 
 

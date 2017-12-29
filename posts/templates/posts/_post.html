@@ -1,11 +1,8 @@
 <div class="media thumbnail col-sm-6 col-md-3 transparent-padding">
-	<div class="media-heading">
+    <div class="media-heading">
         <a class="pop" href="#">
             <img class="thumbnail" style="width: 100%;display: block; margin: 0 auto;" src={{ post.image_url }}>
         </a>
-		<!--
-		<strong>{# { post.user.username } #}</strong>
-		-->
         <h4 class="media-body center-div"> {{ post.message_html|safe|truncatechars_html:50 }}
         </h4>
         <span class="username"><a
@@ -19,15 +16,7 @@
                     href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
             </span>
         <h5 class="media-body">
-
-
-        <!--
-		<div class="media-footer">
-		-->
-        <!--
-        <div class="">
-		-->
-			{% if user.is_authenticated and post.user == user and not hide_delete %}
+            {% if user.is_authenticated and post.user == user and not hide_delete %}
                 <div style="float: right">
                     <a href="{% url 'posts:update' pk=post.pk %}" title="update" class="btn btn-simple">
                         <span class="glyphicon glyphicon-edit text-warning" aria-hidden="true"></span>
@@ -39,11 +28,8 @@
                     </a>
                 </div>
             {% endif %}
-        <!--
-        </div>
-        -->
         </h5>
-	</div>
+    </div>
 </div>
 
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

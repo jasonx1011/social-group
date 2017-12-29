@@ -3,8 +3,38 @@
 {% block pre_post_content %}
 {% endblock %}
 
+{% block test_block_hide %}
+    <div class="infinite-container">
+        {% for post in posts %}
+            <div class="infinite-item">
+                <p>
+                    {#% include "posts/_post.html"%#}
+
+                </p>
+                <h3>{{ post.user }}, {{ post.group }}</h3>
+                <p>
+                    <small>{{ post.image_url }}</small>
+                </p>
+                <p>{{ post.message_html|truncatechars:100 }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="loading" style="display: none;">
+        Loading...
+    </div>
+
+    {% if page_obj.has_next %}
+        <h1>{{ post_list.next_page_number }}</h1>
+        <h1>{{ posts.next_page_number }}</h1>
+        <h1>##</h1>
+        <h1>{{ page_obj.next_page_number }}</h1>
+        <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">More</a>
+    {% endif %}
+{% endblock %}
+
 {% block post_content %}
-    {% for post in post_list %}
+    {% for post in posts %}
         {% include "posts/_post.html"%}
     {% endfor %}
 {% endblock %}
+
