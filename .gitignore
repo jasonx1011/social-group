@@ -105,3 +105,6 @@ ENV/
 
 # migration detail
 migrations/
+
+# backup file
+.bak
