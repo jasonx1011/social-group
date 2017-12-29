@@ -7,7 +7,6 @@ from django.contrib.auth import get_user_model
 import misaka
 
 # Create your models here.
-
 User = get_user_model()
 
 
@@ -18,9 +17,10 @@ class Post(models.Model):
     # image = models.ImageField(upload_to='documents/')
     # image_url = models.URLField()
     # image_url = models.TextField()
-    message = models.TextField(default="")
+    message = models.TextField(blank=True, default="")
     message_html = models.TextField(editable=False)
     group = models.ForeignKey(Group, related_name='posts', null=True, blank=True)
+    postlike_members = models.ManyToManyField(User, related_name='postlike_members', through='PostLike')
 
     def __str__(self):
         return self.message
@@ -36,3 +36,14 @@ class Post(models.Model):
     class Meta:
         ordering = ['-created_at']
         unique_together = ['user', 'message']
+
+
+class PostLike(models.Model):
+    post = models.ForeignKey(Post, related_name='post_liked')
+    user = models.ForeignKey(User, related_name='user_like')
+
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        unique_together = ('post', 'user')
