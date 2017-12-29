@@ -21,57 +21,58 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="{% static 'social/js/jquery.waypoints.min.js' %}"></script>
-    <script src="{% static 'social/js/infinite.min.js' %}"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'social/css/master.css'%}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+
     <title>Social Groups</title>
 </head>
 <body id="home-body" class="" style="padding-top: 50px">
-    <nav class='navbar mynav navbar-fixed-top' role="navigation" id="navbar">
-        <div class="container">
-            <a class="navbar-brand mynav" href="{% url 'home' %}">Home</a>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-default">
-                    <span class="glyphicon glyphicon-search"></span>
-                </button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}
-                    <li>
-                        <a href="{% url 'posts:for_user' username=user.username %}">
-                            @{{ user.username }}
-                        </a>
-                    </li>
-                    <li><a href="{% url 'posts:all' %}">All posts</a></li>
-                    <li><a href="{% url 'groups:all' %}">All Groups</a></li>
-                    <li><a href="{% url 'posts:create' %}">Create Post</a></li>
-                    <li><a href="{% url 'groups:create' %}">Create Group</a></li>
-                    <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
-                {% else %}
-                    <li><a href="{% url 'posts:all' %}">All Posts</a></li>
-                    <li><a href="{% url 'groups:all' %}">All Groups</a></li>
-                    <li><a href="{% url 'accounts:login' %}">Log In</a></li>
-                    <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
-    <div style="overflow-y: scroll; height: 95vh">
-    <div class="container mycontent">
-
-    {% block content %}
-    
-    {% endblock %}
-
+<nav class='navbar mynav navbar-fixed-top' role="navigation" id="navbar">
+    <div class="container">
+        <a class="navbar-brand mynav" href="{% url 'home' %}">Home</a>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'posts:for_user' username=user.username %}">
+                        @{{ user.username }}
+                    </a>
+                </li>
+                <li><a href="{% url 'posts:all' %}">All posts</a></li>
+                <li><a href="{% url 'groups:all' %}">All Groups</a></li>
+                <li><a href="{% url 'posts:create' %}">Create Post</a></li>
+                <li><a href="{% url 'groups:create' %}">Create Group</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+            {% else %}
+                <li><a href="{% url 'posts:all' %}">All Posts</a></li>
+                <li><a href="{% url 'groups:all' %}">All Groups</a></li>
+                <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
     </div>
+</nav>
+<div class="container mycontent" style="overflow-y: scroll; height: 95vh; width: 100%">
+    {% block content %}
+    {% endblock %}
+</div>
+    <!-- need to comment out, for using modal pop-up
+    <script src="{#% static 'social/js/jquery-3.1.1.min.js' %#}"></script>
+    -->
+    <script src="{% static 'social/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'social/js/infinite.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'social/js/master.js' %}"></script>
+
+    {% block javascript %}{% endblock %}
 </body>
-<script type="text/javascript" src="{% static 'social/js/master.js' %}"></script>
 </html>
