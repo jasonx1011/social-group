@@ -6,8 +6,8 @@
 		<!--
 		<strong>{# { post.user.username } #}</strong>
 		-->
-        <p></p>
-        <h4 class="media-body center-div"> {{ post.message_html|safe|truncatechars_html:50 }} </h4>
+        <h4 class="media-body center-div"> {{ post.message_html|safe|truncatechars_html:50 }}
+        </h4>
         <span class="username"><a
                 href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
         {% if post.group %}

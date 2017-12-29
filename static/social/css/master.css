@@ -23,8 +23,8 @@ input.transparent-input{
     background-color: rgba(2,2,2,0.5);
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 5px;
-    padding-bottom: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border: 1px solid floralwhite;
     // border: 2px solid red;
     border-radius: 5px;

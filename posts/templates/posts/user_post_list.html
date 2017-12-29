@@ -3,6 +3,7 @@
 {% block pre_post_content %}
     <div class="col-md-4">
         <h1>@{{ post_user.username }}</h1>
+        <h1>{{ post_user}}</h1>
     </div>
 <div class="col-md-4">
     {% if request.user.is_authenticated %}
