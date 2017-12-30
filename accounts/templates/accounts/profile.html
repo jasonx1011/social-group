@@ -3,5 +3,14 @@
 
 
 {% block content %}
-    <h1>profile</h1>
+    {% for account in user_list %}
+        {% if account.id ==  user.id %}
+        <h1>###</h1>
+        <img class="img-responsive img-rounded" style="width: 200px;" alt="pic. of {{ account }}" src={{ account.image_url }}>
+        <img class="img-responsive img-circle" style="width: 200px; " alt="pic. of {{ account }}" src={{ account.image_url }}>
+        <img class="img-responsive img-thumbnail" style="width: 200px; " alt="pic. of {{ account }}" src={{ account.image_url }}>
+        <h1>###</h1>
+            {{ account.description }}
+        {% endif %}
+    {% endfor %}
 {% endblock %}

@@ -11,13 +11,16 @@ import misaka
 
 class User(auth.models.User, auth.models.PermissionsMixin):
     image_url = models.URLField(default="http://via.placeholder.com/140x100")
-    description = models.TextField(max_length=80, blank=True, default='')
+    description = models.TextField(blank=True, default='')
     relationships = models.ManyToManyField('self', through='Relationship',
                                            symmetrical=False,
                                            related_name='related_to')
 
     def __str__(self):
         return "@{}".format(self.username)
+
+    def get_image_url(self):
+        return self.image_url
 
     def get_absolute_url(self):
         return reverse('accounts:profile', kwargs={'pk': self.id})

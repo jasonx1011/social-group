@@ -2,8 +2,8 @@
 {% load bootstrap3 %}
 
 {% block post_content %}
-<div class="col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-4">
-    <h4>Create a new Post!</h4>
+<div class="col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-4" style="padding-top: 10px">
+    <h4>New Post</h4>
     <form id="postForm" action="{% url 'posts:create' %}" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}

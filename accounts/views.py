@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import CreateView, ListView
+from braces.views import SelectRelatedMixin
 from . import forms
 from . import models
 
@@ -15,5 +16,10 @@ class SignUp(CreateView):
 class Profile(ListView):
     model = models.User
     template_name = "accounts/profile.html"
+
+
+class AccountList(ListView):
+    model = models.User
+    template_name = "accounts/account_list.html"
 
 

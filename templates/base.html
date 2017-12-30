@@ -43,12 +43,10 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'posts:for_user' username=user.username %}">
-                        @{{ user.username }}
-                    </a>
-                </li>
-                <li><a href="{% url 'posts:all' %}">All posts</a></li>
+                <li><a href="{% url 'accounts:profile' pk=user.id %}">profile of @{{ user.username }}</a></li>
+                <li><a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a></li>
+                <li><a href="{% url 'accounts:all' %}">All Users</a></li>
+                <li><a href="{% url 'posts:all' %}">All Posts</a></li>
                 <li><a href="{% url 'groups:all' %}">All Groups</a></li>
                 <li><a href="{% url 'posts:create' %}">Create Post</a></li>
                 <li><a href="{% url 'groups:create' %}">Create Group</a></li>

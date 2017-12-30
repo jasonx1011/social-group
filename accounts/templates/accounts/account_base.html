@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="accounts-page">
+    <div class="container">
+        <div class="row">
+            {% block pre_account_content %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% block account_content %}{% endblock %}
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% block post_account_content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
