@@ -18,6 +18,11 @@ class Profile(ListView):
     template_name = "accounts/profile.html"
 
 
+class AccountDetail(ListView):
+    model = models.User
+    template_name = "accounts/account_detail.html.bak"
+
+
 class AccountList(ListView):
     model = models.User
     template_name = "accounts/account_list.html"

@@ -5,12 +5,16 @@
 {% block content %}
     {% for account in user_list %}
         {% if account.id ==  user.id %}
-        <h1>###</h1>
-        <img class="img-responsive img-rounded" style="width: 200px;" alt="pic. of {{ account }}" src={{ account.image_url }}>
-        <img class="img-responsive img-circle" style="width: 200px; " alt="pic. of {{ account }}" src={{ account.image_url }}>
-        <img class="img-responsive img-thumbnail" style="width: 200px; " alt="pic. of {{ account }}" src={{ account.image_url }}>
-        <h1>###</h1>
-            {{ account.description }}
+        <div class="col-sm-6 col-md-2 transparent-padding">
+            <img class="img-responsive img-circle" style="width: 200px; " alt="pic. of {{ account }}" src={{ account.image_url }}>
+        </div>
+
+            <div class="col-sm-6 col-md-6">
+            <h3>
+                {{ account.description }}
+            </h3>
+                {{ account.get_followers }}
+            </div>
         {% endif %}
     {% endfor %}
 {% endblock %}

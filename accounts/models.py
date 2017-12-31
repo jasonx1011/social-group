@@ -7,9 +7,10 @@ import misaka
 
 
 # Create your models here.
+# AuthUser = get_user_model()
 
-
-class User(auth.models.User, auth.models.PermissionsMixin):
+# class User(models.Model):
+class User(auth.models.User, auth.models.PermissionsMixin, models.Model):
     image_url = models.URLField(default="http://via.placeholder.com/140x100")
     description = models.TextField(blank=True, default='')
     relationships = models.ManyToManyField('self', through='Relationship',

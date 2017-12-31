@@ -29,13 +29,13 @@
 
     <title>Social Groups</title>
 </head>
-<body id="home-body" class="" style="padding-top: 50px">
+{% block profile_page %}{% endblock %}
 <nav class='navbar mynav navbar-fixed-top' role="navigation" id="navbar">
     <div class="container">
         <a class="navbar-brand mynav" href="{% url 'home' %}">Home</a>
-        <form class="navbar-form navbar-left" role="search">
+        <form name="myform" method="GET" action="{% url 'posts:search' %}" class="navbar-form navbar-left" role="search">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" name="in_text" class="form-control" placeholder="Search">
             </div>
             <button type="submit" class="btn btn-default">
                 <span class="glyphicon glyphicon-search"></span>
@@ -60,6 +60,10 @@
         </ul>
     </div>
 </nav>
+
+
+<body id="home-body" class="" style="padding-top: 50px">
+
 <div class="container mycontent" style="overflow-y: scroll; height: 95vh; width: 100%">
     {% block content %}
     {% endblock %}

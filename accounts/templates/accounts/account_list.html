@@ -5,6 +5,12 @@
 
 {% block account_content %}
     <h1>####</h1>
+    { user.image_url }
+    {{ user.id }}
+    {{ user. }}
+    {{ user.username }}
+    {% if user.image_url %}
+    {% endif %}
     {{ object_list }}
     <h1>####</h1>
     {% for account in object_list %}
