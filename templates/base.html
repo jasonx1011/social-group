@@ -29,41 +29,103 @@
 
     <title>Social Groups</title>
 </head>
-{% block profile_page %}{% endblock %}
-<nav class='navbar mynav navbar-fixed-top' role="navigation" id="navbar">
-    <div class="container">
-        <a class="navbar-brand mynav" href="{% url 'home' %}">Home</a>
-        {% csrf_token %}
-        <form name="myform" method="GET" action="{% url 'posts:search' %}" class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <input type="text" name="in_text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">
-                <span class="glyphicon glyphicon-search"></span>
+<body id="home-body" class="" style="padding-top: 50px">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!--
+            <form name="myform" method="GET" action="{#% url 'posts:search' %#}" class="navbar-form navbar-left"
+                  role="search">
+                <div class="form-group">
+                    <input type="text" name="in_text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </form>
+            -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'accounts:profile' pk=user.id %}">profile of @{{ user.username }}</a></li>
-                <li><a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a></li>
-                <li><a href="{% url 'accounts:all' %}">All Users</a></li>
-                <li><a href="{% url 'posts:all' %}">All Posts</a></li>
-                <li><a href="{% url 'groups:all' %}">All Groups</a></li>
-                <li><a href="{% url 'posts:create' %}">Create Post</a></li>
-                <li><a href="{% url 'groups:create' %}">Create Group</a></li>
-                <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
-            {% else %}
-                <li><a href="{% url 'posts:all' %}">All Posts</a></li>
-                <li><a href="{% url 'groups:all' %}">All Groups</a></li>
-                <li><a href="{% url 'accounts:login' %}">Log In</a></li>
-                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
-            {% endif %}
-        </ul>
+            <a class="navbar-brand" href="{% url 'posts:search' %}">Home</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                    {% if user.is_authenticated %}
+                        <!--
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-search"></span></a>
+                            <ul class="dropdown-menu navbar-inverse">
+                                <div class="input-group">
+                                    <form name="myform" method="GET" action="{#% url 'posts:search' %#}" class="">
+                                        <input type="text" class="form-control" placeholder="Search for...">
+                                        <span class="input-group-btn">
+                                    <div style="float: right">
+                                    <button style="color: #337ab7" type="submit" class="btn btn-secondary"
+                                            type="button">Go!</button>
+                                        </div>
+                                </span>
+                                    </form>
+                                </div>
+                            </ul>
+                        </li>
+                        -->
+                        <li><a href="{% url 'posts:search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
+                        <li><a href="{% url 'accounts:detail' pk=user.id %}">Profile of @{{ user.username }}</a></li>
+                        <li><a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">All<span
+                                class="caret"></span></a>
+                            <ul class="dropdown-menu navbar-inverse">
+                                <li><a style="color: #337ab7" href="{% url 'posts:all' %}">All Posts</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'groups:all' %}">All Groups</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'accounts:all' %}">All Users</a></li>
+                            </ul>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Create<span
+                                class="caret"></span></a>
+                            <ul class="dropdown-menu navbar-inverse">
+                                <li><a style="color: #337ab7" href="{% url 'posts:create' %}">Create Post</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'groups:create' %}">Create Group</a></li>
+                            </ul>
+                        <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+                    {% else %}
+                        <!--
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-search"></span></a>
+                            <ul class="dropdown-menu navbar-inverse">
+                                <div class="input-group">
+                                    <form name="myform" method="GET" action="{#% url 'posts:search' %#}" class="">
+                                        <input type="text" name="in_text" class="form-control"
+                                               placeholder="Search for...">
+                                        <div style="float: right">
+                                <span class="input-group-btn">
+                                    <button style="color: #337ab7" type="submit" class="btn btn-default btn-simple"
+                                            type="button">Go!</button>
+                                </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </ul>
+                        </li>
+                        -->
+
+                        <li><a href="{% url 'posts:search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
+                        <li><a href="{% url 'posts:all' %}">All Posts</a></li>
+                        <li><a href="{% url 'groups:all' %}">All Groups</a></li>
+                        <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                        <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+                    {% endif %}
+
+                </ul>
+            </ul>
+        </div>
     </div>
 </nav>
-
-
-<body id="home-body" class="" style="padding-top: 50px">
+{% block profile_page %}{% endblock %}
 
 <div class="container mycontent" style="overflow-y: scroll; height: 95vh; width: 100%">
     {% block content %}
