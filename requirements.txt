@@ -5,10 +5,12 @@ django-bootstrap3==9.1.0
 django-braces==1.12.0
 django-debug-toolbar==1.9.1
 django-filter==1.1.0
+django-heroku==0.2.0
 gunicorn==19.7.1
 misaka==2.1.0
 olefile==0.44
 Pillow==4.3.0
+psycopg2==2.7.3.2
 pycparser==2.18
 pytz==2017.3
 sqlparse==0.2.4
