@@ -103,8 +103,5 @@ ENV/
 # .idea
 .idea/
 
-# migration detail
-migrations/
-
 # backup file
 .bak
