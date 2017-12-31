@@ -33,6 +33,7 @@
 <nav class='navbar mynav navbar-fixed-top' role="navigation" id="navbar">
     <div class="container">
         <a class="navbar-brand mynav" href="{% url 'home' %}">Home</a>
+        {% csrf_token %}
         <form name="myform" method="GET" action="{% url 'posts:search' %}" class="navbar-form navbar-left" role="search">
             <div class="form-group">
                 <input type="text" name="in_text" class="form-control" placeholder="Search">

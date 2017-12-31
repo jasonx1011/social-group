@@ -25,14 +25,15 @@ User = get_user_model()
 #     return render(request, 'posts/post_search.html', {'filter': post_filter})
 
 def search(request):
-    if request.method == 'GET': # this will be GET now
-        in_text = request.GET.get('in_text') # do some research what it does
+    if request.method == 'GET':
+        in_text = request.GET.get('in_text', '')
         try:
-            status = models.Post.objects.filter(message__icontains=in_text) # filter returns a list so you might consider skip except part
+            status = models.Post.objects.filter(Q(message__icontains=in_text) |
+                                                Q(group__description__icontains=in_text))
         except models.Post.DoesNotExist:
             raise Http404
         else:
-            return render(request, "posts/post_search.html", {"posts":status})
+            return render(request, "posts/post_search.html", {"posts": status})
     else:
         return render(request,"posts/post_search.html",{})
 #

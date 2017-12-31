@@ -10,10 +10,7 @@
     <p><input type="submit" name="submit" value="submit"/></p>
     </form>
     -->
-
-  <ul>
-  {% for post in posts %}
-      {% include "posts/_post.html"%}
-  {% endfor %}
-  </ul>
+    {% for post in posts %}
+        {% include "posts/_post.html" %}
+    {% endfor %}
 {% endblock %}
