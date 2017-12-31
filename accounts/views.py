@@ -13,14 +13,9 @@ class SignUp(CreateView):
     template_name = 'accounts/signup.html'
 
 
-class Profile(ListView):
-    model = models.User
-    template_name = "accounts/profile.html"
-
-
 class AccountDetail(ListView):
     model = models.User
-    template_name = "accounts/account_detail.html.bak"
+    template_name = "accounts/account_detail.html"
 
 
 class AccountList(ListView):

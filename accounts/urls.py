@@ -12,6 +12,5 @@ urlpatterns = [
     url(r'signup/$', views.SignUp.as_view(), name='signup'),
     url(r'all/$', views.AccountList.as_view(), name='all'),
     # url(r'profile/(?P<pk>\d+)/$', views.Profile.as_view(), name='profile'),
-    url(r'profile/(?P<pk>\d+)/$', views.AccountDetail.as_view(), name='profile'),
     url(r'detail/(?P<pk>\d+)/$', views.AccountDetail.as_view(), name='detail'),
 ]
