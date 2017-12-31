@@ -2,17 +2,19 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from groups.models import Group
+from accounts.models import User
 from django.contrib.auth import get_user_model
 
 import misaka
 
 # Create your models here.
-User = get_user_model()
+AuthUser = get_user_model()
+# AuthUser = User
 
 
 class Post(models.Model):
     image_url = models.URLField(default="http://via.placeholder.com/140x100")
-    user = models.ForeignKey(User, related_name='posts')
+    user = models.ForeignKey(AuthUser, related_name='posts')
     created_at = models.DateTimeField(auto_now=True)
     # image = models.ImageField(upload_to='documents/')
     # image_url = models.URLField()
@@ -20,7 +22,7 @@ class Post(models.Model):
     message = models.TextField(blank=True, default="")
     message_html = models.TextField(editable=False)
     group = models.ForeignKey(Group, related_name='posts', null=True, blank=True)
-    postlike_members = models.ManyToManyField(User, related_name='postlike_members', through='PostLike')
+    postlike_members = models.ManyToManyField(AuthUser, related_name='postlike_members', through='PostLike')
 
     def __str__(self):
         return self.message
@@ -40,7 +42,7 @@ class Post(models.Model):
 
 class PostLike(models.Model):
     post = models.ForeignKey(Post, related_name='post_liked')
-    user = models.ForeignKey(User, related_name='user_like')
+    user = models.ForeignKey(AuthUser, related_name='user_like')
 
     def __str__(self):
         return self.user.username

@@ -1,0 +1,19 @@
+{% extends "posts/post_base.html" %}
+
+{% block pre_post_content %}
+{% endblock %}
+
+{% block post_content %}
+    <!--
+    <form method="get" action="{#% url 'posts:search' %#}">
+    <p>Filter: <input style="background-color: black" type="text" value="3" name="filter"/></p>
+    <p><input type="submit" name="submit" value="submit"/></p>
+    </form>
+    -->
+
+  <ul>
+  {% for post in posts %}
+      {% include "posts/_post.html"%}
+  {% endfor %}
+  </ul>
+{% endblock %}

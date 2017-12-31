@@ -1,0 +1,23 @@
+{% extends "posts/post_base.html" %}
+
+{% block pre_post_content %}
+{% endblock %}
+
+{% block post_content %}
+    <div style="background-color: white">
+        <form method="get" style="background-color:black">
+            {% csrf_token %}
+            {{ filter.form.as_table }}
+            <button type="submit">Search</button>
+            {% for field in filter.form %}
+                {{ field(widget=forms.TextInput(attrs={'placeholder': 'Your Email', 'class':'your_css_code'}))) }}
+            {% endfor %}
+        </form>
+
+    </div>
+  <ul>
+  {% for post in filter.qs %}
+      {% include "posts/_post.html"%}
+  {% endfor %}
+  </ul>
+{% endblock %}

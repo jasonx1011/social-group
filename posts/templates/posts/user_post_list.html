@@ -2,8 +2,11 @@
 
 {% block pre_post_content %}
     <div class="col-md-4">
+    {% if request.user.image_url %}
+    {% endif %}
         <h1>@{{ post_user.username }}</h1>
         <h1>{{ post_user }}</h1>
+        <h2> {{ post_user_list }}</h2>
         <img class="img-responsive img-circle" style="width: 200px; " alt="pic. of {{ post_user.username }} {{ post_user.id }}" src={{ post_user.image_url }}>
     </div>
 <div class="col-md-4">
