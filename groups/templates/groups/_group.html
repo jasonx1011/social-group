@@ -1,10 +1,12 @@
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-        <a class="pop" href="#">
+        <a class="" href="{% url 'groups:single' slug=group.slug %}">
             <img src={{ group.image_url }}>
         </a>
         <div class="caption">
-            <!-- <a class="list-group-item img-responsive" href="{#% url 'groups:single' slug=group.slug %#}"> -->
+            <!--
+            <a class="list-group-item img-responsive" href="{#% url 'groups:single' slug=group.slug %#}">
+            -->
             <a class="" href="{% url 'groups:single' slug=group.slug %}">
                 <h4>{{ group.name }}</h4>
             </a>
