@@ -1,0 +1,18 @@
+<div class="col-sm-3 col-md-2">
+    <div class="thumbnail ">
+        <a class="pop" href="#">
+            <img src={{ account.image_url }}>
+        </a>
+        <div class="caption">
+            <a class="" href="{% url 'accounts:detail' pk=account.id %}">
+                <h4>{{ account.name }}</h4>
+            </a>
+            <p>{{ account.description_html|safe|truncatechars_html:85 }}</p>
+            <div class="">
+                <span class="badge">{{ account.get_followed.count }} </span>
+                fllowed{{ account.get_followed.count|pluralize }}
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -76,20 +76,20 @@
                         </li>
                         -->
                         <li><a href="{% url 'posts:search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
-                        <li><a href="{% url 'accounts:detail' pk=user.id %}">Profile of @{{ user.username }}</a></li>
+                        <li><a href="{% url 'accounts:detail' pk=user.id %}"><span class="glyphicon glyphicon-user"></span></a></li>
                         <li><a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">All<span
                                 class="caret"></span></a>
                             <ul class="dropdown-menu navbar-inverse">
-                                <li><a style="color: #337ab7" href="{% url 'posts:all' %}">All Posts</a></li>
-                                <li><a style="color: #337ab7" href="{% url 'groups:all' %}">All Groups</a></li>
-                                <li><a style="color: #337ab7" href="{% url 'accounts:all' %}">All Users</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'posts:all' %}">Posts</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'groups:all' %}">Groups</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'accounts:all' %}">Users</a></li>
                             </ul>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Create<span
                                 class="caret"></span></a>
                             <ul class="dropdown-menu navbar-inverse">
-                                <li><a style="color: #337ab7" href="{% url 'posts:create' %}">Create Post</a></li>
-                                <li><a style="color: #337ab7" href="{% url 'groups:create' %}">Create Group</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'posts:create' %}">Post</a></li>
+                                <li><a style="color: #337ab7" href="{% url 'groups:create' %}">Group</a></li>
                             </ul>
                         <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
                     {% else %}
@@ -114,8 +114,8 @@
                         -->
 
                         <li><a href="{% url 'posts:search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
-                        <li><a href="{% url 'posts:all' %}">All Posts</a></li>
-                        <li><a href="{% url 'groups:all' %}">All Groups</a></li>
+                        <li><a href="{% url 'posts:all' %}">Posts</a></li>
+                        <li><a href="{% url 'groups:all' %}">Groups</a></li>
                         <li><a href="{% url 'accounts:login' %}">Log In</a></li>
                         <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
                     {% endif %}

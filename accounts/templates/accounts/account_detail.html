@@ -26,19 +26,27 @@
         <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
             <div class="btn-group" role="group">
                 <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span
-                        class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <div class="hidden-xs">Stars</div>
+                        class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    <div class="hidden-xs">Posts <span class="badge">{{ account.posts.count }} </span>
+                    </div>
                 </button>
             </div>
             <div class="btn-group" role="group">
                 <button type="button" id="favorites" class="btn btn-default" href="#tab2"
                         data-toggle="tab"><span
-                        class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                    <div class="hidden-xs">Favorites</div>
+                        class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <div class="hidden-xs">Groups <span class="badge">{{ account.group_members.count }} </span>
                 </button>
             </div>
             <div class="btn-group" role="group">
-                <button type="button" id="following" class="btn btn-default" href="#tab3"
+                <button type="button" id="followed" class="btn btn-default" href="#tab3"
+                        data-toggle="tab"><span
+                        class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    <div class="hidden-xs">Followed</div>
+                </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" id="following" class="btn btn-default" href="#tab4"
                         data-toggle="tab"><span
                         class="glyphicon glyphicon-user" aria-hidden="true"></span>
                     <div class="hidden-xs">Following</div>
@@ -49,26 +57,31 @@
         <div class="well">
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="tab1">
-                    <h3>This is tab 1</h3>
+                {% for post in account.posts.all %}
+                    {% include "posts/_post.html" %}
+                {% endfor %}
+                </div>
+                <div class="tab-pane fade in" id="tab2">
+                    <h3>groups</h3>
+                    {% for group in account.group_members.all %}
+                        {% include "groups/_group.html" %}
+                    {% endfor %}
+                </div>
+                <div class="tab-pane fade in" id="tab4">
+                    <h3>This is tab 3</h3>
+                    get_following: {{ account.get_following }} <br>
+                                        {{ account.posts.all }}<br>
                     {{ user.image_url.all }}<br>
                     {{ user.groups }}<br>
-                    {{ account.posts.all }}<br>
                     {% for post in account.posts.all %}
                         {{ post }}
 
                     {% endfor %}
                     {{ account.group_members.all }}<br>
                     get_followers: {{ account.get_followers }} <br>
-                    get_following: {{ account.get_following }} <br>
                     {#% for post in account.posts %#}
                     {#% include "posts/_post.html" %#}
                     {#% endfor %#}
-                </div>
-                <div class="tab-pane fade in" id="tab2">
-                    <h3>This is tab 2</h3>
-                </div>
-                <div class="tab-pane fade in" id="tab3">
-                    <h3>This is tab 3</h3>
                 </div>
             </div>
         </div>

@@ -11,45 +11,7 @@
 <div class="">
     <div class="list-group row">
         {% for group in object_list %}
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail">
-                    <a class="pop" href="#">
-                        <img src={{ group.image_url }}>
-                    </a>
-                    <div class="caption">
-                        <!-- <a class="list-group-item img-responsive" href="{#% url 'groups:single' slug=group.slug %#}"> -->
-                        <a class="" href="{% url 'groups:single' slug=group.slug %}">
-                            <h4>{{ group.name }}</h4>
-                        </a>
-                        <p>{{ group.description_html|safe|truncatechars_html:85 }}</p>
-                        <div class="">
-                            <span class="badge">{{ group.members.count }} </span>
-                            member{{ group.members.count|pluralize }}
-                            <span class="badge">{{ group.posts.count }} </span>
-                            post{{ group.posts.count|pluralize }}
-                        </div>
-                        <h5 class="media-body">
-                            {% if user in group.members.all %}
-                                <div class="" style="float: right;">
-                                    <a href="{% url 'groups:leave' slug=group.slug %}" title="leave"
-                                       class="btn">
-                                        <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-                                        <span class="text-danger icon-label">Leave</span>
-                                    </a>
-                                </div>
-                            {% else %}
-                                <div class="" style="float: right;">
-                                    <a href="{% url 'groups:join' slug=group.slug %}" title="join"
-                                       class="btn">
-                                        <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-                                        <span class="text-success icon-label">Join</span>
-                                    </a>
-                                </div>
-                            {% endif %}
-                        </h5>
-                    </div>
-                </div>
-            </div>
+            {% include "groups/_group.html" %}
         {% endfor %}
     </div>
 </div>

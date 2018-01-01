@@ -5,18 +5,22 @@
         </a>
         <h4 class="media-body center-div"> {{ post.message_html|safe|truncatechars_html:50 }}
         </h4>
-        <span class="username"><a
-                href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
+        <span class="username">
+            <a href="{% url 'accounts:detail' pk=post.user.id %}">@{{ post.user.username }}</a>
+            <!-- <a href="{#% url 'posts:for_user' username=post.user.username %#}">@{#{ post.user.username }#}</a> -->
+        </span>
         {% if post.group %}
-            <span class="group-name"> posted in group <a
-                    href="{% url 'groups:single' slug=post.group.slug %}">{{ post.group.name }}</a></span>
+            <span class="group-name"> posted in group
+                <a href="{% url 'groups:single' slug=post.group.slug %}">{{ post.group.name }}</a>
+            </span>
         {% endif %}
         <span class="time-name"> at
-            <time class="time"><a
-                    href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
+            <time class="time">
+                <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a>
+            </time>
             </span>
         <h5 class="media-body">
-			{% if user.is_authenticated and post.user == user and not hide_delete %}
+			{% if user.is_authenticated and post.user.id == user.id and not hide_delete %}
                 <div style="float: right">
                     <a href="{% url 'posts:update' pk=post.pk %}" title="update" class="btn">
                         <span class="glyphicon glyphicon-edit text-warning" aria-hidden="true"></span>

@@ -50,7 +50,7 @@ input.transparent-input{
 }
 
 .transparent-padding {
-    background-color: rgba(2,2,2,0.5);
+    background-color: rgba(0,0,0,0.8);
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 15px;
@@ -85,7 +85,7 @@ input.transparent-input{
 
 .center-div{
     margin: 0 auto;
-    width: 30%
+    width: 50%
 }
 
 /* USER PROFILE PAGE */
@@ -113,7 +113,7 @@ input.transparent-input{
 }
 .card.hovercard .card-background {
     // height: 130px;
-    height: 300px;
+    height: 200px;
 }
 .card-background img {
     -webkit-filter: blur(25px);
@@ -136,7 +136,7 @@ input.transparent-input{
     // height: 100px;
     // max-width: 100px;
     // max-height: 100px;
-    width: 200px;
+    width: 130px;
     height: auto;
     // max-width: 200px;
     // max-height: 200px;
@@ -174,4 +174,12 @@ input.transparent-input{
 }
 .btn-pref .btn {
     -webkit-border-radius:0 !important;
+}
+
+.tab-content {
+   background-color:transparent !important;
+   border:none;
+   overflow-y: scroll;
+   height: 50vh;
+   width: 100%"
 }

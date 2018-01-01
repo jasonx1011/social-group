@@ -29,6 +29,7 @@ def search(request):
         in_text = request.GET.get('in_text', '')
         try:
             status = models.Post.objects.filter(Q(message__icontains=in_text) |
+                                                Q(user__username__icontains=in_text) |
                                                 Q(group__description__icontains=in_text))
         except models.Post.DoesNotExist:
             raise Http404
