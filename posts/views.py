@@ -19,11 +19,6 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-# def search(request):
-#     post_list = models.Post.objects.all()
-#     post_filter = PostFilter(request.GET, queryset=post_list)
-#     return render(request, 'posts/post_search.html', {'filter': post_filter})
-
 def search(request):
     if request.method == 'GET':
         in_text = request.GET.get('in_text', '')
@@ -37,25 +32,6 @@ def search(request):
             return render(request, "posts/post_search.html", {"posts": status})
     else:
         return render(request,"posts/post_search.html",{})
-#
-#
-# class PostSearch(generic.ListView):
-#     model = models.Post
-#     template_name = "posts/post_search.html"
-#
-#     paginate_by = 10
-#
-#     def get_queryset(self):
-#         filter_val = self.request.GET.get('filter', '')
-#         new_context = models.Post.objects.filter(
-#             state=filter_val,
-#         )
-#         return new_context
-
-#     def get_context_data(self, **kwargs):
-#         context = super(PostView, self).get_context_data(**kwargs)
-#         context['filter'] = self.request.GET.get('filter', '')
-#         return context
 
 
 # Create your views here.

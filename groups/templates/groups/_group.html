@@ -18,22 +18,24 @@
                 post{{ group.posts.count|pluralize }}
             </div>
             <h5 class="media-body">
-                {% if user in group.members.all %}
-                    <div class="" style="float: right;">
-                        <a href="{% url 'groups:leave' slug=group.slug %}" title="leave"
-                           class="btn">
-                            <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
-                            <span class="text-danger icon-label">Leave</span>
-                        </a>
-                    </div>
-                {% else %}
-                    <div class="" style="float: right;">
-                        <a href="{% url 'groups:join' slug=group.slug %}" title="join"
-                           class="btn">
-                            <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-                            <span class="text-success icon-label">Join</span>
-                        </a>
-                    </div>
+                {% if request.user.is_authenticated and request.user.id == user.id %}
+                    {% if user in group.members.all %}
+                        <div class="" style="float: right;">
+                            <a href="{% url 'groups:leave' slug=group.slug %}" title="leave"
+                               class="btn">
+                                <span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+                                <span class="text-danger icon-label">Leave</span>
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="" style="float: right;">
+                            <a href="{% url 'groups:join' slug=group.slug %}" title="join"
+                               class="btn">
+                                <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+                                <span class="text-success icon-label">Join</span>
+                            </a>
+                        </div>
+                    {% endif %}
                 {% endif %}
             </h5>
         </div>

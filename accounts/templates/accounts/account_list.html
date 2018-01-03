@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block account_content %}
+    {{ object_list }}
     {% for account in object_list %}
         {% include "accounts/_account.html" %}
     {% endfor %}

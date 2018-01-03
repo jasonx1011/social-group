@@ -5,13 +5,14 @@
         </a>
         <div class="caption">
             <a class="" href="{% url 'accounts:detail' pk=account.id %}">
-                <h4>{{ account.name }}</h4>
+                <h4>{{ account.username }}</h4>
             </a>
             <p>{{ account.description_html|safe|truncatechars_html:85 }}</p>
             <div class="">
                 <span class="badge">{{ account.get_followed.count }} </span>
                 fllowed{{ account.get_followed.count|pluralize }}
             </div>
+        </a>
 
         </div>
     </div>
