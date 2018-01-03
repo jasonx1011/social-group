@@ -9,20 +9,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'social/css/master.css'%}">
+    <link rel="stylesheet" href="{% static 'social/css/master.css' %}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -33,6 +41,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
+            {% if request.user.is_authenticated %}
             <!--
             <form name="myform" method="GET" action="{#% url 'posts:search' %#}" class="navbar-form navbar-left"
                   role="search">
@@ -44,19 +53,22 @@
                 </button>
             </form>
             -->
+            <!--
             <button type="button" class="navbar-toggle" data-toggle="collapse"
                     data-target="#example-navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'posts:search' %}">Home</a>
+            <a class="navbar-brand" href="{#% url 'posts:search' %#}">Home</a>
+            -->
+            {% endif %}
 
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <ul class="nav navbar-nav">
-                    {% if user.is_authenticated %}
+                    {% if request.user.is_authenticated %}
                         <!--
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <span class="glyphicon glyphicon-search"></span></a>
@@ -76,7 +88,8 @@
                         </li>
                         -->
                         <li><a href="{% url 'posts:search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
-                        <li><a href="{% url 'accounts:detail' pk=request.user.id %}"><span class="glyphicon glyphicon-user"></span></a></li>
+                        <li><a href="{% url 'accounts:detail' pk=request.user.id %}"><span
+                                class="glyphicon glyphicon-user"></span></a></li>
                         <!--
                         <li><a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a></li>
                         -->
@@ -114,10 +127,11 @@
                             </ul>
                         </li>
                         -->
-
-                        <li><a href="{% url 'posts:search' %}"><span class="glyphicon glyphicon-search"></span></a></li>
-                        <li><a href="{% url 'posts:all' %}">Posts</a></li>
-                        <li><a href="{% url 'groups:all' %}">Groups</a></li>
+                        <!--
+                        <li><a href="{#% url 'posts:search' %#}"><span class="glyphicon glyphicon-search"></span></a></li>
+                        <li><a href="{#% url 'posts:all' %#}">Posts</a></li>
+                        <li><a href="{#% url 'groups:all' %#}">Groups</a></li>
+                        -->
                         <li><a href="{% url 'accounts:login' %}">Log In</a></li>
                         <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
                     {% endif %}
@@ -133,13 +147,13 @@
     {% block content %}
     {% endblock %}
 </div>
-    <!-- need to comment out, for using modal pop-up
+<!-- need to comment out, for using modal pop-up
     <script src="{#% static 'social/js/jquery-3.1.1.min.js' %#}"></script>
     -->
-    <script src="{% static 'social/js/jquery.waypoints.min.js' %}"></script>
-    <script src="{% static 'social/js/infinite.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'social/js/master.js' %}"></script>
+<script src="{% static 'social/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'social/js/infinite.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'social/js/master.js' %}"></script>
 
-    {% block javascript %}{% endblock %}
+{% block javascript %}{% endblock %}
 </body>
 </html>

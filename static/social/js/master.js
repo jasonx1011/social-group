@@ -13,9 +13,17 @@ $(document).ready(function () {
     });
 });
 
-function fillValues() {
-    document.getElementById("id_username").value = "Guest";
+function fillValuesMatt() {
+    document.getElementById("id_username").value = "Matt";
     document.getElementById("id_password").value = "guestguest123123";
 }
 
-$("#guest").click(fillValues);
+$("#guestMatt").click(fillValuesMatt);
+
+function fillValuesAnne() {
+    document.getElementById("id_username").value = "Anne";
+    document.getElementById("id_password").value = "guestguest123123";
+}
+
+$("#guestAnne").click(fillValuesAnne);
+
