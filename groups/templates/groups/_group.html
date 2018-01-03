@@ -19,7 +19,7 @@
             </div>
             <h5 class="media-body">
                 {% if request.user.is_authenticated and request.user.id == user.id %}
-                    {% if user in group.members.all %}
+                    {% if request.user in group.members.all %}
                         <div class="" style="float: right;">
                             <a href="{% url 'groups:leave' slug=group.slug %}" title="leave"
                                class="btn">
