@@ -11,7 +11,7 @@ import misaka
 
 # class User(models.Model):
 class User(auth.models.User, auth.models.PermissionsMixin, models.Model):
-    image_url = models.URLField(default="http://via.placeholder.com/140x100")
+    image_url = models.URLField(default="http://via.placeholder.com/200x200")
     description = models.TextField(blank=True, default='')
     relationships = models.ManyToManyField('self', through='Relationship',
                                            symmetrical=False,

@@ -4,13 +4,19 @@
             <img src={{ account.image_url }}>
         </a>
         <div class="caption">
-            <a class="pop" href="{% url 'accounts:detail' pk=account.id %}">
+            <a class="" href="{% url 'accounts:detail' pk=account.id %}">
                 <h4>{{ account.username }}</h4>
             </a>
             <p>{{ account.description_html|safe|truncatechars_html:85 }}</p>
             <div class="">
-                <span class="badge">{{ account.get_followed.count }} </span>
-                fllowed{{ account.get_followed.count|pluralize }}
+                <div class="hidden-xs">
+                    <span class="badge">{{ account.posts.count }} </span>
+                    Post{{ account.posts.count|pluralize }}
+                </div>
+                <div class="hidden-xs">
+                    <span class="badge">{{ account.group_members.count }} </span>
+                    Group{{ account.group_members.count|pluralize }}
+                </div>
             </div>
         </a>
 

@@ -13,12 +13,12 @@ class SignUp(CreateView):
     template_name = 'accounts/signup.html'
 
 
-class AccountDetail(DetailView):
+class DetailAccount(DetailView):
     model = models.User
     template_name = "accounts/account_detail.html"
 
 
-class AccountList(ListView):
+class ListAccount(ListView):
     model = models.User
     template_name = "accounts/account_list.html"
 
