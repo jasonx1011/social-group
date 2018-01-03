@@ -104,4 +104,4 @@ ENV/
 .idea/
 
 # backup file
-.bak
+*.bak
