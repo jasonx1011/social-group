@@ -1,18 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-        <div class="container">
-            <div class="row">
+    <div class="container">
+        <div class="row">
+            {% if request.user.is_authenticated %}
                 {% block pregroup %} {% endblock %}
-            </div>
+            {% endif %}
         </div>
-        <div class="container">
-            <div class="row">
+    </div>
+    <div class="container">
+        <div class="row">
+            {% if request.user.is_authenticated %}
                 {% block group_content %} {% endblock %}
-            </div>
+            {% endif %}
         </div>
-        <div class="container">
-            <div class="row">
+    </div>
+    <div class="container">
+        <div class="row">
+            {% if request.user.is_authenticated %}
                 {% block postgroup %} {% endblock %}
-            </div>
+            {% endif %}
         </div>
+    </div>
 {% endblock %}

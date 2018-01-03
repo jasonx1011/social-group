@@ -13,7 +13,7 @@ AuthUser = get_user_model()
 
 
 class Post(models.Model):
-    image_url = models.URLField(default="http://via.placeholder.com/140x100")
+    image_url = models.URLField(default="http://via.placeholder.com/200x200")
     user = models.ForeignKey(AuthUser, related_name='posts')
     created_at = models.DateTimeField(auto_now=True)
     # image = models.ImageField(upload_to='documents/')

@@ -4,24 +4,23 @@
 <div class="posts-page">
     <div class="container">
         <div class="row">
+            {% if user.is_authenticated %}
             {% block pre_post_content %}{% endblock %}
+            {% endif %}
         </div>
     </div>
-
     <div class="container">
         <div class="row">
-            {% block test_block %}{% endblock %}
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
+            {% if user.is_authenticated %}
             {% block post_content %}{% endblock %}
+            {% endif %}
         </div>
     </div>
     <div class="container">
         <div class="row">
+            {% if user.is_authenticated %}
             {% block post_post %}{% endblock %}
+            {% endif %}
         </div>
     </div>
 </div>

@@ -1,34 +1,27 @@
 {% extends "posts/post_base.html" %}
 
-{% block pre_post_content %}
-    <div class="col-md-4">
-    {% if request.user.image_url %}
-    {% endif %}
-        <h1>@{{ post_user.username }}</h1>
-        <h1>{{ post_user }}</h1>
-        <h2> {{ post_user_list }}</h2>
-        <img class="img-responsive img-circle" style="width: 200px; " alt="pic. of {{ post_user.username }} {{ post_user.id }}" src={{ post_user.image_url }}>
-    </div>
-<div class="col-md-4">
-    {% if request.user.is_authenticated %}
-    <div class="card card-with-shadow">
-        <div class="content">
-            <h5 class="title">Groups</h5>
-            <ul class="list-unstyled">
-                {% for group in post_user.group_members.all %}
-                    <li class="group li-with-bullet">
-                        <a href="{% url 'groups:single' slug=group.slug%}"> {{ group.name }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-    {% endif %}
-</div>
-{% endblock %}
+    {% block pre_post_content %}
+        {% if request.user.is_authenticated %}
+            <div class="card card-with-shadow">
+                <div class="content">
+                    <h5 class="title">Groups</h5>
+                    <ul class="list-unstyled">
+                        {% for group in post_user.group_members.all %}
+                            <li class="group li-with-bullet">
+                                <a href="{% url 'groups:single' slug=group.slug %}"> {{ group.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    {% endblock %}
 
-{% block post_content %}
-    {% for post in post_list %}
-        {% include "posts/_post.html" %}
-    {% endfor %}
-{% endblock %}
+    {% block post_content %}
+        {% if request.user.is_authenticated %}
+        {% for post in post_list %}
+            {% include "posts/_post.html" %}
+        {% endfor %}
+        {% endif %}
+    {% endblock %}
+
