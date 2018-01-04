@@ -3,8 +3,10 @@
         <a class="pop" href="#">
             <img class="thumbnail" style="width: 100%;display: block; margin: 0 auto;" src={{ post.image_url }}>
         </a>
-        <h4 class="media-body center-div"> {{ post.message_html|safe|truncatechars_html:50 }}
+        <p>
+        <h4 class="media-body center-div"> {{ post.message_html|safe|truncatechars_html:80 }}
         </h4>
+        </p>
         <span class="username">
             <a href="{% url 'accounts:detail' pk=post.user.id %}">@{{ post.user.username }}</a>
             <!-- <a href="{#% url 'posts:for_user' username=post.user.username %#}">@{#{ post.user.username }#}</a> -->

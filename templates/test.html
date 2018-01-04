@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block content %}
-
-<h1 class="center-block">Share you favorites with others!</h1>
-
-{% endblock %}
+{% if request.user.is_authenticated and request.user.id == user.id %}
+    {% block content %}
+        <h1 class="home-text">Hi {{ user.username }}! Welcome back!</h1>
+    {% endblock %}
+{% endif %}
