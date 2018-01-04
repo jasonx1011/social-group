@@ -1,2 +1,3 @@
 # social-group
-simple social group website
+live web on Heroku:
+https://morning-brushlands-81598.herokuapp.com
