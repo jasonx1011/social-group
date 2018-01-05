@@ -1,6 +1,6 @@
 # social-group
 
-[Live site on Heroku](https://social-group-django.herokuapp.com): https://social-group-django.herokuapp.com
+[Live on Heroku](https://social-group-django.herokuapp.com): https://social-group-django.herokuapp.com
 
 ## Features
 
@@ -34,9 +34,9 @@ class ListGroups(generic.ListView):
 ### Responsive Design 
    * Large screen: 4 columns
 ![lg_screen]
-   * Middle screen: 2 columns
+   * Middle screen: 2 columns without shrinking the image
 ![md_screen]
-   * Small screen: 1 columns with collapse navbar
+   * Small screen: 1 column without shrinking the image and with collapsed navbar
 ![sm_screen]
 
 ### Login, and Guest Login
@@ -142,7 +142,7 @@ class ListGroups(generic.ListView):
 ### User Profile and Guest Demo (1 day)
 
 - [x] Profile template creation 
-- [x] Implemented guest demo using Javescript
+- [x] Implemented guest demo using JavaScript
 - [x] All user list with thumbnail items 
 - [x] Implemented counting icons for posts and groups
 
