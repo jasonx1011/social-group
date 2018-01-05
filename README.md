@@ -1,7 +1,35 @@
 # social-group
 
+## Live Site
 [Live on Heroku](https://social-group-django.herokuapp.com): https://social-group-django.herokuapp.com
 
+
+## Run Locally  
+**Clone project**
+```
+git clone https://github.com/jasonx1011/social-group.git  
+```
+**If you are using Anaconda, do the following commands before virtualenv commands**
+```
+conda create -n py362 python=3.6.2
+source activate py362
+condo install virtualenv
+```
+**Using virtualenv venv**
+
+```
+virtualenv venv
+source venv/bin/activate
+
+pip install django==1.11
+pip install -r requirements.txt
+```
+**Run Django**
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
 ## Features
 
 Social Group is a responsive web application using `Django` MTV (Model-Template-View) framework with Class-Based Views (CBV). Front End is powered by `bootstrap 3`. This application contains the following features with clean and smooth user experience.
