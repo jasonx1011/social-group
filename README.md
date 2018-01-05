@@ -32,12 +32,14 @@ class ListGroups(generic.ListView):
 ```
 
 ### Responsive Design 
-   * Large screen: 4 columns
+   * **Large screen: 4 columns**
 ![lg_screen]
-   * Middle screen: 2 columns without shrinking the image
+   * **Middle screen: 2 columns without shrinking the image**
 ![md_screen]
-   * Small screen: 1 column without shrinking the image and with collapsed navbar
+   * **Small screen: 1 column without shrinking the image**
 ![sm_screen]
+   * **Small screen: collapsed navbar**
+![sm_screen_navbar]
 
 ### Login, and Guest Login
 ![login]
@@ -69,6 +71,7 @@ class ListGroups(generic.ListView):
 [lg_screen]: ./assets/pics/lg_screen.png
 [md_screen]: ./assets/pics/md_screen.png
 [sm_screen]: ./assets/pics/sm_screen.png
+[sm_screen_navbar]: ./assets/pics/sm_screen_navbar.png
 [login]: ./assets/pics/login.png
 [signup]: ./assets/pics/signup.png
 [search]: ./assets/pics/search.png
