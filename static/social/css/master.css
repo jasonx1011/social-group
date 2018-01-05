@@ -97,10 +97,12 @@ h1, h2, h3, h4, h5, h6 {
     // height: 550px;
     // height: 100%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .overflow-y {
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .center-div{
@@ -205,6 +207,7 @@ h1, h2, h3, h4, h5, h6 {
    background-color:transparent !important;
    border:none;
    overflow-y: scroll;
+   -webkit-overflow-scrolling: touch;
    height: 50vh;
    width: 100%"
 }
