@@ -105,3 +105,4 @@ ENV/
 
 # backup file
 *.bak
+*.DS_Store
