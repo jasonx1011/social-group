@@ -211,3 +211,10 @@ h1, h2, h3, h4, h5, h6 {
    height: 50vh;
    width: 100%"
 }
+
+.mycontent {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 95vh;
+    width: 100%
+}
