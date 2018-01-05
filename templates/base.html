@@ -41,7 +41,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            {% if request.user.is_authenticated %}
             <!--
             <form name="myform" method="GET" action="{#% url 'posts:search' %#}" class="navbar-form navbar-left"
                   role="search">
@@ -53,7 +52,6 @@
                 </button>
             </form>
             -->
-            <!--
             <button type="button" class="navbar-toggle" data-toggle="collapse"
                     data-target="#example-navbar-collapse">
                 <span class="icon-bar"></span>
@@ -61,8 +59,6 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{#% url 'posts:search' %#}">Home</a>
-            -->
-            {% endif %}
 
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">

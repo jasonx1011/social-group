@@ -31,7 +31,7 @@ def search(request):
         else:
             return render(request, "posts/post_search.html", {"posts": status})
     else:
-        return render(request,"posts/post_search.html",{})
+        return render(request, "posts/post_search.html", {})
 
 
 # Create your views here.
