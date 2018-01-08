@@ -10,6 +10,16 @@ $(document).ready(function () {
         $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
         // $(".tab").addClass("active"); // instead of this do the below
         $(this).removeClass("btn-default").addClass("btn-primary");
+        var $grid = $('.row').masonry({
+            // columnWidth: '30%',
+            itemSelector: '.grid-item',
+            // percentPosition: true
+        });
+
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress(function () {
+            $grid.masonry('layout');
+        });
     });
 });
 
