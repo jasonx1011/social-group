@@ -179,12 +179,16 @@ class ListGroups(generic.ListView):
 - [x] Adjust Front End components with bootstrap grid system for responsive design
 - [x] Styling navbar, posts templates, group templates, and user templates
 
+### Masonry for Dynamic Listing Pictures (1 day)
+
+- [x] Using Masonry package to list thumbnail images dynamically
+
 ### Deploying to Heroku (1 day)
 
 - [x] Follow the Django-Python deployment instructions for deploying the project to Heroku
 
+
 ### Bonus Features (TBD)
-- [ ] Infinite Scroll
 - [ ] Follows of Users
 - [ ] Likes for Posts
 
