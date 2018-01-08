@@ -3,6 +3,9 @@
 ## Live Site
 [Live on Heroku](https://social-group-django.herokuapp.com): https://social-group-django.herokuapp.com
 
+## What is Django?
+<img src="https://www.filepicker.io/api/file/P6Z7Ac0UTVWr260Fvg7x" style="width: 300px; height: auto;" />
+   * image source: http://easylearning.guru
 
 ## Run Locally  
 <details>
@@ -198,10 +201,10 @@ class ListGroups(generic.ListView):
 - [ ] Likes for Posts
 
 ## Resources
-Django:
-https://www.djangoproject.com/
-Django FAQ:
+Django:  
+https://www.djangoproject.com/  
+
+Django FAQ:  
 [Django appears to be a MVC framework, but you call the Controller the “view”, and the View the “template”. How come you don’t use the standard names?](https://docs.djangoproject.com/en/2.0/faq/general/)
 
-![django-diagram](http://blog.easylearning.guru/wordpress/wp-content/uploads/2015/08/Django-Template-214x300.png)
-   * source: http://blog.easylearning.guru/implementing-mtv-model-in-python-django/
+
