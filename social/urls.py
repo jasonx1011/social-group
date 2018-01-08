@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.contrib.auth import views as auth_views
+from django.views.generic import RedirectView
 
 from . import views
 from django.conf.urls.static import static
@@ -26,6 +27,8 @@ urlpatterns = [
     # url(r'^$', auth_views.LoginView.as_view(template_name='accounts/login.html'),
     #    name='home_login'),
     url(r'^test/$', views.TestPage.as_view(), name='test'),
+    # url(r'^test/$', views.HomePage.as_view(), name='test'),
+    # url(r'^test/$', RedirectView.as_view(url='http://127.0.0.1:8000/'), name='test'),
     url(r'^thanks/$', views.ThanksPage.as_view(), name='thanks'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
