@@ -38,6 +38,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
 
+    <link rel="shortcut icon" href="{% static 'favicon/favicon-96x96.png' %}"/>
+
     <title>Social-Group-Django</title>
 </head>
 <body id="home-body" class="" style="padding-top: 50px">
@@ -50,7 +52,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'posts:search' %}">Home</a>
+            <a class="navbar-brand" href="{% url 'posts:search' %}">
+                Home
+            </a>
 
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
@@ -90,8 +94,8 @@
 
 <!-- <div class="container mycontent" style="overflow-y: scroll; height: 95vh; width: 100%"> -->
 <div class="container mycontent">
-        {% block content %}
-        {% endblock %}
+    {% block content %}
+    {% endblock %}
 </div>
 <!-- need to comment out, for using modal pop-up
     <script src="{#% static 'social/js/jquery-3.1.1.min.js' %#}"></script>
