@@ -27,3 +27,14 @@ function fillValuesAnne() {
 
 $("#guestAnne").click(fillValuesAnne);
 
+
+var $grid = $('.row').masonry({
+    // columnWidth: '30%',
+    itemSelector: '.grid-item',
+    // percentPosition: true
+});
+
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
+});

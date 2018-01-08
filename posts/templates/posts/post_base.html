@@ -1,28 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="posts-page">
     <div class="container">
-        <div class="row">
+        <div class="" style="margin: 0 auto">
             {% if user.is_authenticated %}
-            {% block pre_post_content %}{% endblock %}
+                {% block pre_post_content %}{% endblock %}
             {% endif %}
         </div>
     </div>
     <div class="container">
         <div class="row">
             {% if user.is_authenticated %}
-            {% block post_content %}{% endblock %}
+                {% block post_content %}{% endblock %}
             {% endif %}
         </div>
     </div>
     <div class="container">
         <div class="row">
             {% if user.is_authenticated %}
-            {% block post_post %}{% endblock %}
+                {% block post_post %}{% endblock %}
             {% endif %}
         </div>
     </div>
-</div>
 {% endblock %}
 

@@ -10,13 +10,12 @@
 {% endblock %}
 
 {% block group_content %}
-<div class="">
-    <div class="list-group row">
+    <!-- <div class="list-group row"> -->
+    <div class="list-group">
         {% for group in object_list %}
             {% include "groups/_group.html" %}
         {% endfor %}
     </div>
-</div>
 
 
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
