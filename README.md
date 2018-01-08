@@ -3,10 +3,6 @@
 ## Live Site
 [Live on Heroku](https://social-group-django.herokuapp.com): https://social-group-django.herokuapp.com
 
-## What is Django?
-<img src="https://www.filepicker.io/api/file/P6Z7Ac0UTVWr260Fvg7x" style="width: 300px; height: auto;" />
-   * image source: http://easylearning.guru
-
 ## Run Locally  
 <details>
   <summary>Detail (click to expand)</summary>
@@ -204,7 +200,11 @@ class ListGroups(generic.ListView):
 Django:  
 https://www.djangoproject.com/  
 
+What is Django?  
+<img src="https://www.filepicker.io/api/file/P6Z7Ac0UTVWr260Fvg7x" width=300 />  
+image source: http://easylearning.guru   
+
 Django FAQ:  
 [Django appears to be a MVC framework, but you call the Controller the “view”, and the View the “template”. How come you don’t use the standard names?](https://docs.djangoproject.com/en/2.0/faq/general/)
 
-
+ 
