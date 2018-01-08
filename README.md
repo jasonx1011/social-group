@@ -5,6 +5,9 @@
 
 
 ## Run Locally  
+<details>
+  <summary>Detail (click to expand)</summary>
+
 **Clone project**
 ```
 git clone https://github.com/jasonx1011/social-group.git  
@@ -30,9 +33,11 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+</details>
+
 ## Features
 
-Social Group is a responsive web application using `Django` MTV (Model-Template-View) framework with Class-Based Views (CBV). Front End is powered by `bootstrap 3`. This application contains the following features with clean and smooth user experience.
+Social Group is a responsive web application using `Django` MTV (Model-Template-View) framework with Class-Based Views (CBV). Front end is powered by HTML5, CSS3, JavaScript, Masonry, and Bootstrap 3. This application contains the following features with clean and smooth user experience.
 
 ### Sample Class-Based Views Code Snippets
 ```python
