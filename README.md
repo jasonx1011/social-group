@@ -2,6 +2,9 @@
 
 ## Live Site
 [Live on Heroku](https://social-group-django.herokuapp.com): https://social-group-django.herokuapp.com
+![profile]
+![search]
+![lg_screen]
 
 ## Run Locally  
 <details>
