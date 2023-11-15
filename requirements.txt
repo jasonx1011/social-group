@@ -9,7 +9,7 @@ django-heroku==0.2.0
 gunicorn==19.7.1
 misaka==2.1.0
 olefile==0.44
-Pillow==4.3.0
+Pillow
 psycopg2==2.7.3.2
 pycparser==2.18
 pytz==2017.3
